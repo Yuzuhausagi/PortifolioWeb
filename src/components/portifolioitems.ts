@@ -35,4 +35,5 @@ iconsByTechnologies.set('React', ReactIcon);
 iconsByTechnologies.set('API', APIIcon);
 iconsByTechnologies.set('Unity', UnityIcon);
 iconsByTechnologies.set('HTML', HtmlIcon);
+iconsByTechnologies.set('CSS', CssIcon);
 

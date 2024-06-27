@@ -1,11 +1,26 @@
 import Image from "next/image";
 import PortifolioItem from "@/components/portifolioItem";
+import {NavBar} from "@/components/NavBar";
+import {Header} from "@/components/Header";
 
 export default function Home() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <div>
-                <div className="flex flex-wrap gap-3 sm:max-w-full" style={{width: 1700}}>
+        <main className="flex justify-center bg-slate-950">
+            <NavBar/>
+            <div className="flex min-h-screen flex-col items-center justify-between p-24 gap-8" style={{width: 1700}}>
+                <section id={"about"} className="flex flex-col gap-2">
+                    <Header>About Me</Header>
+                    <p className="text-3xl font-bold ">
+                        Jeg er en teknologientusiast med en solid utdanningsbakgrunn og en dyktig forståelse for program-
+                        mering. Min lidenskap ligger i kontinuerlig å utvide kunnskapsbasen og forfine mine ferdigheter som
+                        utvikler, spesielt innenfor det dynamiske teknologilandskapet. Utover profesjonelle bestrebelser er
+                        jeg
+                        sterkt engasjert i cybersikkerhet og finner stor tilfredsstillelse i å veilede studenter innen
+                        universitetets
+                        fagområder.
+                    </p>
+                </section>
+                <section id={"portifolio"} className="flex flex-wrap gap-3 sm:max-w-full">
 
                     <PortifolioItem topic={"Portifolio"}
                                     description={"A Discord Bot using the Discord API to automate the server management. It can send welcome messages to newly joined users and assign roles based on their emoticon selections in server messages."}
@@ -29,7 +44,7 @@ export default function Home() {
                     <PortifolioItem topic={"Reddit bot"}
                                     description={"Developed a bot that automatically retrieves and displays the top post from a specific subreddit, creates a dedicated discussion thread, and includes a command to refresh and display recent top posts."}
                                     footer={["JavaScript"]}/>
-                </div>
+                </section>
             </div>
         </main>
     );
