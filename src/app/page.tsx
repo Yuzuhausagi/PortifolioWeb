@@ -23,39 +23,36 @@ export default function Home() {
                             students within the university's academic fields.
                         </p>
                         <div className="flex flex-col items-center mt-8">
-                            <span className="text-gray-100 text-xl mb-4">Technologies:</span>
-                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-gray-300">
+                            <span className="text-green-400 text-xl mb-4">Technologies:</span>
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-gray-100">
                                 <div className="flex items-center gap-2">
-                                    <span className="text-gray-100">•</span>
-                                    <span>C</span>
+                                    <img src="/icons/c--4.svg" alt="C Icon" className="w-6 h-6"/>
+                                    <span className="font-medium">C</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <span className="text-gray-100">•</span>
-                                    <span className="font-medium border-b-2 border-transparent hover:border-green-400 transition-all duration-200">C#</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <span className="text-gray-100-400">•</span>
+                                    <img src="/icons/c--4.svg" alt="C++ Icon" className="w-6 h-6"/>
                                     <span className="font-medium hover:text-green-400 transition-colors duration-200">C++</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <span className="text-gray-100">•</span>
-                                    <span>Java</span>
+                                    <img src="/icons/java-logo.svg" alt="Java Icon" className="w-6 h-6"/>
+                                    <span className="font-medium">Java</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <span className="text-gray-100">•</span>
-                                    <span>Python</span>
+                                    <img src="/icons/python-logo-only.svg" alt="Python Icon" className="w-6 h-6"/>
+                                    <span className="font-medium border-b-2 border-transparent hover:border-green-400 transition-all duration-200">Python</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <span className="text-gray-100">•</span>
-                                    <span>Javascript & TypeScript</span>
+                                    <img src="/icons/javascript-logo-svgrepo-com.svg" alt="JavaScript Icon"
+                                         className="w-6 h-6"/>
+                                    <span className="font-medium">JavaScript</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <span className="text-gray-100">•</span>
-                                    <span>HTML & CSS</span>
+                                    <img src="/icons/html-1.svg" alt="HTML & CSS Icon" className="w-6 h-6"/>
+                                    <span className="font-medium">HTML & CSS</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <span className="text-gray-100">•</span>
-                                    <span>GitHub Actions</span>
+                                    <img src="/icons/github-logo.svg" alt="GitHub Actions Icon" className="w-6 h-6"/>
+                                    <span className="font-medium">GitHub Actions</span>
                                 </div>
                             </div>
                         </div>
