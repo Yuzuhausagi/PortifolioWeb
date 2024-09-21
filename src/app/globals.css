@@ -31,3 +31,18 @@ body {
     text-wrap: balance;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes animate-fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+#contact.fade {
+  animation-name: animate-fade;
+  animation-timing-function: ease;
+  animation-duration: 1s;
+}
