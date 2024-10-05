@@ -2,6 +2,8 @@ import PortifolioItem from "@/components/portifolioItem";
 import {NavBar} from "@/components/NavBar";
 import {Header} from "@/components/Header";
 import Observer from "@/components/Observer";
+import PythonIcon from "@/icons/python-logo-only.svg";
+import {TechnologyList} from "@/components/TechnologyList";
 
 export default function Home() {
     return (
@@ -24,45 +26,47 @@ export default function Home() {
                         </p>
                         <div className="flex flex-col items-center mt-8">
                             <span className="text-green-400 text-xl mb-4">Technologies:</span>
-                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-gray-100">
-                                <div className="flex items-center gap-2">
-                                    <img src="/icons/c--4.svg" alt="C Icon" className="w-6 h-6"/>
-                                    <span className="font-medium">C</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <img src="/icons/c--4.svg" alt="C++ Icon" className="w-6 h-6"/>
-                                    <span className="font-medium hover:text-green-400 transition-colors duration-200">C++</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <img src="/icons/java-logo.svg" alt="Java Icon" className="w-6 h-6"/>
-                                    <span className="font-medium">Java</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <img src="/icons/python-logo-only.svg" alt="Python Icon" className="w-6 h-6"/>
-                                    <span className="font-medium border-b-2 border-transparent hover:border-green-400 transition-all duration-200">Python</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <img src="/icons/javascript-logo-svgrepo-com.svg" alt="JavaScript Icon"
-                                         className="w-6 h-6"/>
-                                    <span className="font-medium">JavaScript</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <img src="/icons/html-1.svg" alt="HTML & CSS Icon" className="w-6 h-6"/>
-                                    <span className="font-medium">HTML & CSS</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <img src="/icons/github-logo.svg" alt="GitHub Actions Icon" className="w-6 h-6"/>
-                                    <span className="font-medium">GitHub Actions</span>
-                                </div>
-                            </div>
+                            <TechnologyList/>
+
                         </div>
                     </Observer>
                 </section>
 
                 {/* Experience Section */}
-                <section id="experience" className="flex flex-col gap-2 pt-32 pb-32 text-center">
+                <section id="experience" className="flex flex-col gap-8 pt-32 pb-32 text-center w-full">
                     <Header>Experience</Header>
-                    <p className="text-3xl font-bold">Raichuu is gei</p>
+                    <div className="flex flex-col gap-12">
+                        {/* Experience Item */}
+                        <div className="flex flex-col items-start text-left gap-4">
+                            <h3 className="text-xl font-bold text-teal-400">Course instructor</h3>
+                            <span className="text-gray-400">Jan 2023 – May 2024</span>
+                            <ul className="list-disc list-inside text-gray-300">
+                                <li>Guided over 100 students in developing basic and advanced programming skills.</li>
+                                <li>Collaborated with academic staff to provide tailored support in debugging complex code, improving students' learning outcomes.</li>
+                            </ul>
+                        </div>
+                         <div className="flex flex-col items-start text-left gap-4">
+                            <h3 className="text-xl font-bold text-teal-400">Developer (Bachelor Project), Customs</h3>
+                            <span className="text-gray-400">Jan 2024 – May 2024</span>
+                            <ul className="list-disc list-inside text-gray-300">
+                                <li>Led the development of a secure web application for managing import/export requests in compliance with Norwegian customs regulations.</li>
+                                <li>Implemented AI-driven solutions to automate product classification, optimize processing times, and reduce manual workload.</li>
+                                <li>Coordinated with cross-functional teams to adapt the application to security, usability, and compliance standards.</li>
+                            </ul>
+                        </div>
+                        <div className="flex flex-col items-start text-left gap-4">
+                            <h3 className="text-xl font-bold text-teal-400">Geenie Unity | Technical Support Specialist</h3>
+                            <span className="text-gray-400">Jan 2022 – Feb 2024</span>
+                            <ul className="list-disc list-inside text-gray-300">
+                                <li>Provided technical support for web applications, enhancing front-end performance and
+                                    user experience by implementing optimized CSS and JavaScript solutions.
+                                </li>
+                                <li>Developed comprehensive user guides and documentation to streamline support
+                                    processes and improve customer satisfaction.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </section>
 
                 {/* Projects Section */}
@@ -129,7 +133,7 @@ export default function Home() {
                             <img
                                 src="/icon/github.svg"
                                 alt="Github"
-                                className="w-10 h-10 hover:scale-110 transform transition-transform duration-300 text-gray-200 opacity-90"
+                                className=" w-10 h-10 hover:scale-110 transform transition-transform duration-300 text-gray-200 opacity-90"
                             />
                         </a>
                         <a href="https://www.linkedin.com/in/yosaf-zamir/" target="_blank">
