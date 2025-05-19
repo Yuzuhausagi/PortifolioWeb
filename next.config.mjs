@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    reactStrictMode : false,
     webpack(config) {
         // Grab the existing rule that handles SVG imports
         const fileLoaderRule = config.module.rules.find((rule) =>
@@ -24,7 +25,6 @@ const nextConfig = {
 
         // Modify the file loader rule to ignore *.svg, since we have it handled now.
         fileLoaderRule.exclude = /\.svg$/i
-
         return config
     },
 };

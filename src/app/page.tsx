@@ -3,33 +3,29 @@ import {NavBar} from "@/components/NavBar";
 import {Header} from "@/components/Header";
 import Observer from "@/components/Observer";
 import PythonIcon from "@/icons/python-logo-only.svg";
+import ContactSection from "@/components/ContactSection";
 import {TechnologyList} from "@/components/TechnologyList";
+import Terminal from "@/components/Terminal";
 
 export default function Home() {
     return (
         <main className="flex justify-center bg-slate-950">
             <NavBar/>
             <div className="flex min-h-screen flex-col items-center justify-between p-24 gap-8" style={{width: 1700}}>
-
-                {/* About Me Section */}
                 <section id="about" className="flex flex-col gap-4 items-center text-center w-full pt-16 pb-32">
-                    <Header>About Me</Header>
-                    {/* <Observer> */}
-                        <p className="text-lg text-gray-300 max-w-3xl">
-                            I am a technology enthusiast with a solid educational background and a proficient
-                            understanding
-                            of programming. My passion lies in continuously expanding my knowledge base and refining my
-                            skills as a developer, especially within the dynamic technology landscape. Beyond
-                            professional
-                            endeavors, I am deeply engaged in cybersecurity and find great satisfaction in mentoring
-                            students within the university's academic fields.
-                        </p>
-                        <div className="flex flex-col items-center mt-8">
-                            <span className="text-green-400 text-xl mb-4">Technologies:</span>
-                            <TechnologyList/>
-
-                        </div>
-                    {/* </Observer> */}
+                  <Header>About Me</Header>
+                      <p className="text-lg text-gray-300 max-w-3xl">
+                        I am a technology enthusiast with a solid educational background and a proficient
+                        understanding of programming. My passion lies in continuously expanding my knowledge base and refining my
+                        skills as a developer, especially within the dynamic technology landscape. Beyond professional
+                        endeavors, I am deeply engaged in cybersecurity and find great satisfaction in mentoring
+                        students within the university's academic fields.
+                      </p>
+                      <div className="flex flex-col items-center mt-8">
+                        <span className="text-green-400 text-xl mb-4">Technologies:</span>
+                        <TechnologyList />
+                      </div>
+                      <Terminal />
                 </section>
 
                 {/* Experience Section */}
@@ -40,7 +36,7 @@ export default function Home() {
                         {/* Experience Item */}
                         <div className="flex flex-col items-start text-left gap-4">
                             <h3 className="text-xl font-bold text-teal-400">Course instructor</h3>
-                            <span className="text-gray-400">Jan 2023 – May 2024</span>
+                            <span className="text-gray-400">Jan 2023 – May 2025</span>
                             <ul className="list-disc list-inside text-gray-300">
                                 <li>Guided over 100 students in developing basic and advanced programming skills.</li>
                                 <li>Collaborated with academic staff to provide tailored support in debugging complex
@@ -144,19 +140,7 @@ export default function Home() {
                 </Observer>
 
                 {/* Contact Section */}
-                <section id="contact" className="flex flex-col gap-2 fade pt-32 pb-32">
-                    <Header>Contact</Header>
-                    <span>Don't hesitate to reach out to me. I'll get back to you promptly.</span>
-                    <div className="flex justify-center">
-                        <a
-                            href="mailto:x"
-                            className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
-                            style={{opacity: 1, transform: "translateY(0px)"}}
-                        >
-                            Contact me!
-                        </a>
-                    </div>
-                </section>
+                <ContactSection />
 
                 {/* Social Links Section */}
                 <section className="social-links-section">
@@ -177,7 +161,6 @@ export default function Home() {
                         </a>
                     </div>
                 </section>
-
             </div>
         </main>
     );

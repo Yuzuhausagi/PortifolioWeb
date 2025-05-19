@@ -9,7 +9,8 @@ interface ObserverProps {
 
 const Observer: React.FC<ObserverProps> = ({ children, threshold }) => {
   const { ref, inView } = useInView({
-    threshold: threshold || 0.5, // trigger when 50% of the element is in view
+    // trigger when 50% of the element is in view
+    threshold: threshold || 0.5,
     triggerOnce: true,
   });
 
