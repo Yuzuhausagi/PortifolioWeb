@@ -14,18 +14,11 @@ export default function Home() {
             <div className="flex min-h-screen flex-col items-center justify-between p-24 gap-8" style={{width: 1700}}>
                 <section id="about" className="flex flex-col gap-4 items-center text-center w-full pt-16 pb-32">
                   <Header>About Me</Header>
-                      <p className="text-lg text-gray-300 max-w-3xl">
-                        I am a technology enthusiast with a solid educational background and a proficient
-                        understanding of programming. My passion lies in continuously expanding my knowledge base and refining my
-                        skills as a developer, especially within the dynamic technology landscape. Beyond professional
-                        endeavors, I am deeply engaged in cybersecurity and find great satisfaction in mentoring
-                        students within the university's academic fields.
-                      </p>
+                        <Terminal />
                       <div className="flex flex-col items-center mt-8">
-                        <span className="text-green-400 text-xl mb-4">Technologies:</span>
                         <TechnologyList />
                       </div>
-                      <Terminal />
+
                 </section>
 
                 {/* Experience Section */}
