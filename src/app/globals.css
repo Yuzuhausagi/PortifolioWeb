@@ -16,6 +16,8 @@
     }
 }
 
+
+
 .blink {
     animation: blink 1s step-end infinite;
 }
@@ -58,4 +60,32 @@ html {
     animation-name: animate-fade;
     animation-timing-function: ease;
     animation-duration: 1s;
+}
+
+/* Responsive utilities */
+@layer components {
+    .container-responsive {
+        @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+    
+    .text-responsive {
+        @apply text-sm sm:text-base md:text-lg;
+    }
+    
+    .heading-responsive {
+        @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+    }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 640px) {
+    .social-links {
+        bottom: 1rem;
+        left: 1rem;
+    }
+    
+    .social-links img {
+        width: 2rem;
+        height: 2rem;
+    }
 }

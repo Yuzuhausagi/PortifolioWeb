@@ -1,32 +1,38 @@
-import {Technology, iconsByTechnologies} from "@/components/portifolioitems";
-
+import { Technology, iconsByTechnologies } from "@/components/portifolioitems";
 
 export default function PortifolioItem({
-                                           topic, description, footer, link
-                                       }: Readonly<{
-    topic: string;
-    description: string;
-    footer: Technology[];
-    link?: string;
+  topic,
+  description,
+  footer,
+  link,
+}: Readonly<{
+  topic: string;
+  description: string;
+  footer: Technology[];
+  link?: string;
 }>) {
-    return (
-        <div style={{flexBasis: "calc(33.333% - 0.75rem)"}}
-             className="flex flex-col h-96 bg-slate-800 hover:ring-1 transition-all ring-amber-300 rounded-md p-10">
-            <div className="flex-col flex gap-2">
-                <div className="text-3xl">
-                    {topic}
-                </div>
-                <div className="text-md">
-                    {description}
-                </div>
+  return (
+    <div className="flex flex-col h-auto min-h-[20rem] sm:min-h-[24rem] bg-slate-800 hover:shadow-lg hover:bg-slate-700 transition-all rounded-md p-4 sm:p-6 md:p-8 border border-slate-700">
+      <div className="flex flex-col gap-3">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">{topic}</h3>
+        <p className="text-sm sm:text-base text-gray-300 break-words">{description}</p>
+      </div>
+      <div className="flex flex-wrap gap-2 mt-auto justify-center pt-4">
+        {footer.map((technology) => {
+          const IconComponent = iconsByTechnologies.get(technology);
+          return (
+            <div className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm text-gray-200" key={technology}>
+              {IconComponent && <IconComponent width={16} height={16} className="sm:w-5 sm:h-5" />}
+              {technology}
             </div>
-            <div className="flex gap-2 mt-auto justify-center">
-                {footer.map(technology => {
-                    const IconComponent = iconsByTechnologies.get(technology);
-                    return <div className="flex gap-2" key={technology}>{IconComponent ?
-                        <IconComponent width={20} height={20}/> : undefined}{technology}</div>;
-                })}
-            </div>
-        </div>
-    );
+          );
+        })}
+      </div>
+      {link && (
+        <a href={link} target="_blank" className="mt-4 text-blue-400 text-sm hover:underline">
+          View Project
+        </a>
+      )}
+    </div>
+  );
 }
