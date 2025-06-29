@@ -137,7 +137,7 @@ const Terminal = () => {
       output: [
         "Contact Information:",
         "boldEmail: c9[email protected]",
-        "boldLinkedIn: c6linkedin.com/in/yosaf-zamir",
+        "boldLinkedIn: c6linkedin.com/",
         "boldGitHub: c6github.com/Yuzuhausagi",
       ],
     },
