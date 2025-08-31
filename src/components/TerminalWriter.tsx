@@ -1,15 +1,16 @@
-"use client";
-import { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
-const TerminalWriter = ({ children, allowWrite, onFinishedTyping, speed = 70 }: {
+const TerminalWriter = ({ children, allowWrite, onFinishedTyping, speed = 30, renderFunction }: {
   children: string;
   allowWrite: boolean;
   onFinishedTyping?: () => void;
   speed?: number;
+  renderFunction?: (text: string) => React.ReactNode;
 }) => {
   const [current, setCurrent] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
   const intervalIDRef = useRef<NodeJS.Timeout | null>(null);
+  const cursorIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     if (!allowWrite) {
@@ -31,21 +32,28 @@ const TerminalWriter = ({ children, allowWrite, onFinishedTyping, speed = 70 }: 
     const intervalID = setInterval(myCallback, speed);
     intervalIDRef.current = intervalID;
 
-    const cursorInterval = setInterval(() => setShowCursor((prev) => !prev), 500);
+    // Only show cursor blinking for the active typing element
+    if (current < children.length) {
+      cursorIntervalRef.current = setInterval(() => setShowCursor((prev) => !prev), 300);
+    }
+
     return () => {
       clearInterval(intervalID);
-      clearInterval(cursorInterval);
+      if (cursorIntervalRef.current) {
+        clearInterval(cursorIntervalRef.current);
+      }
     };
-  }, [allowWrite, children.length, onFinishedTyping, speed]);
+  }, [allowWrite, children.length, onFinishedTyping, speed, current]);
+
+  const displayText = children.substring(0, current);
 
   return (
     <>
-      {children.substring(0, current)}
+      {renderFunction ? renderFunction(displayText) : displayText}
       {allowWrite && current < children.length && (
-        <span className={`blink ${showCursor ? 'opacity-100' : 'opacity-0'}`}>|</span>
+        <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity`}>|</span>
       )}
     </>
   );
 };
-
 export default TerminalWriter;
