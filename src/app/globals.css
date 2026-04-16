@@ -3,59 +3,86 @@
 @tailwind utilities;
 
 :root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --foreground-rgb: 255, 255, 255;
-        --background-start-rgb: 0, 0, 0;
-        --background-end-rgb: 0, 0, 0;
-    }
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
 }
 
 .blink {
-    animation: blink 1s step-end infinite;
+  animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
-    50% {
-        opacity: 0;
-    }
+  50% {
+    opacity: 0;
+  }
+}
+
+/*
+  Full-viewport base: #727272 + tiled Hero pattern (whole page, not only one section).
+  Body paints translucent tints on top; keep main transparent so this stays visible.
+*/
+html {
+  min-height: 100dvh;
+  scroll-behavior: smooth;
+  background-color: #727272;
+  background-image: var(--hero-pattern);
+  background-repeat: repeat;
+  background-position: 0 0;
+  background-attachment: fixed;
+  background-size: auto;
 }
 
 body {
-    color: rgb(var(--foreground-rgb));
-    background: linear-gradient(
-            to bottom,
-            transparent,
-            rgb(var(--background-end-rgb))
-    ) rgb(var(--background-start-rgb));
+  color: rgb(var(--foreground-rgb));
+  min-height: 100dvh;
+  background-color: transparent;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(var(--background-end-rgb), var(--site-bg-end-layer-opacity)),
+      rgba(var(--background-end-rgb), var(--site-bg-end-layer-opacity))
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(var(--background-start-rgb), var(--site-bg-tint-opacity)),
+      rgba(var(--background-start-rgb), var(--site-bg-tint-opacity))
+    );
+  background-size:
+    100% var(--site-bg-end-layer-height),
+    100% 100%;
+  background-position:
+    bottom center,
+    center center;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
 }
 
 @layer utilities {
-    .text-balance {
-        text-wrap: balance;
-    }
-}
-
-html {
-    scroll-behavior: smooth;
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 
 @keyframes animate-fade {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #contact.fade {
-    animation-name: animate-fade;
-    animation-timing-function: ease;
-    animation-duration: 1s;
+  animation-name: animate-fade;
+  animation-timing-function: ease;
+  animation-duration: 1s;
 }
